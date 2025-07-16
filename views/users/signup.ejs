@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row mt-3">
+    <h1 class="col-6 offset-3">Sign up </h1>
+        <div class="col-6 offset-3" >
+            <form action="/signup" method="POST" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" id="username" type="text" class="form-control" required/>
+                <div class="valid-feedback"> looks great</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" id="email" type="email" class="form-control" required/>
+                
+                </div>
+
+                <div class="mb-3 position-relative">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                <i class="fa-solid fa-eye" id="togglePassword" style="position: absolute; top: 73%; right: 24px; transform: translateY(-50%); cursor: pointer;"></i>
+                </div>
+                <button class="btn-btn-success">Signup</button>
+            </form>
+        </div>
+        <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+        });
+        </script>
+
+</div>

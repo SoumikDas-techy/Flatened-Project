@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home sweet Home</title>
+</head> -->
+<% layout("/layouts/boilerplate")%>
+<br />
+<body>
+    <div class="row">
+        <div class="col-8 offset-2" >
+    <h1>Create a new Listing</h1>
+    <form method="POST" action="/listings" novalidate class="needs-validation" >
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="enter title" type="text" class="form-control" required/>
+        <div class="valid-feedback">Title looks great</div>
+    </div>
+
+    <div class="mb-3">
+        <lable for="description" class="form-label">Description</lable>
+        <textarea name="listing[description]" placeholder="enter description" class="form-control"required></textarea>
+    </div>
+
+
+     <div class="mb-3">
+        <lable for="image" class="form-label">Upload listing Image </lable>
+        <input name="listing[image][url]" placeholder="enter the link" type="text" class="form-control"  />
+
+     </div>
+
+    <div class="row">
+
+    <div class="mb-3 col-4">
+        <lable for="price" class="form-label">Price</lable>
+        <input name="listing[price]" placeholder="enter price"  class="form-control" required />
+        <div class="invalid-feedback">Invalid price</div>
+       
+    </div>
+    <div class="mb-3 col-8">
+        <lable for="country" class="form-label">Country</lable>
+        <input name="listing[country]" placeholder="enter country" type="text" class="form-control" required />
+        <div class="invalid-feedback">Please enter proper Country name</div>
+    </div>
+</div>
+
+    <div class="mb-3">
+        <lable for="location" class="form-label">Location</lable>
+        <input name="listing[location]" placeholder="enter location" type="text"  class="form-control" required/>
+        <div class="invalid-feedback">Please enter the location</div>
+    </div>
+ 
+    <br/>
+    <button type="submit" class="btncolr">Submit</button>
+    <br /><br/>
+
+    </form>
+    </div>
+    </div>
+</body>
